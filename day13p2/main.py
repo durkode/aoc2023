@@ -13,10 +13,7 @@ def row_reflection_before(grid):
         max_distance = min(r+1, len(grid)-r-1)
         smudges = 0
         for d in range(max_distance):
-            # print(f"at r = {r} d = {d}")
-            # print(f"r = {r}, max_distance = {max_distance}")
-            if grid[r-d] != grid[r+d+1]:
-                smudges += sum([0 if a==b else 1 for a, b in zip(grid[r-d], grid[r+d+1])])
+            smudges += sum([0 if a==b else 1 for a, b in zip(grid[r-d], grid[r+d+1])])
         if smudges == 1:
             # print(f"symmetrical at r = {r}, max_distance = {max_distance}")
             indexes.append(r)
